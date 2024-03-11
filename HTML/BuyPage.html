@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="../ressources/images/icon_calinours.ico" />
+        <link rel="stylesheet" href="../CSS/header.css">
+        <link rel="stylesheet" href="../CSS/buy_page.css">
+        <link rel="stylesheet" href="../CSS/footer.css">
+        <link rel="stylesheet" href="../CSS/FooterSection/ConditionGeneralDeVente.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="../JS/script.js"></script>
+        <script src="../JS/manage_buy_page.js"></script>
+        <script src="../JS/descriptionItems.js"></script>
+        <script src="../JS/create_form.js"></script>
+    </head>
+    <body>
+        <div class="reduc_bandeau">
+            <div>
+                <p>A l'occasion de la taker academy: -30% sur tout le site</p>
+            </div>
+        </div>
+        <header class="Title">
+            <div class="logo_header">
+                <script>BackToMenu()</script>
+                <a href="./index.html"></a>
+                <img src="../ressources/images/logo_calinours.png" alt="logo calinours">
+                <div class="brand_name">
+                    <h1>Câlinours</h1>
+                    <h3>l'esprit enfantin</h3>
+                </div>
+            </div>
+            <div class="pages">
+                <div class="faq">
+                    <img src="../ressources/images/ours-en-peluche.png" alt="footer_ancre">
+                    <a href="./FAQ.html"" id="hebergement">FAQ</a>
+                    <img src="../ressources/images/ours-en-peluche.png" alt="footer_ancre">
+                </div>
+                <div class="contact">
+                    <img src="../ressources/images/ours-en-peluche.png" alt="footer_ancre">
+                    <a href="./Contact.html" id="activites">Contact</a>
+                    <img src="../ressources/images/ours-en-peluche.png" alt="footer_ancre">
+                </div>
+                <div class="panier">
+                    <img src="../ressources/images/ours-en-peluche.png" alt="footer_ancre">
+                    <a id="sinscrire" onclick="openPanier()">Panier</a>
+                    <img src="../ressources/images/ours-en-peluche.png" alt="footer_ancre">
+                </div>
+            </div>
+        </header>
+        <div class="final_buy">
+            <div class="first_part">
+                <span class="resume_panier">1</span>
+            </div>
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="second_part">
+                <span class="paiement">2</span>
+            </div>
+        </div>
+        <div class="content_recap">
+            <div class="recapitulatif">
+                <div class="title_and_product">
+                    <h2>Votre Panier</h2>
+                    <p class="nb_of_product">(x produits)</p>
+                    <script>DisplayNbItems()</script>
+                </div>
+                <div class="resume_items">
+                    <script>GetItemInCart()</script>
+                </div>
+            </div>
+            <div class="total">
+                <div class="code_promo">
+                    <h5>Un code promo ?</h5>
+                    <div class="input_promo">
+                        <textarea name="textarea" rows="1" cols="20" placeholder="Ecrivez le ici." class="promo"></textarea>
+                        <button class="validate_promo"> Valider</button>
+                    </div>
+                </div>
+                <div class="montant">
+                    <div class="cart">
+                        <div class="panier_recap">
+                            <p>Panier</p>
+                            <p class="nb_of_product">(x produits)</p>
+                            <script>DisplayNbItems()</script>
+                        </div>
+                        <p class="prix_total">x€</p>
+                        <script>DisplayTotal()</script>
+                    </div>
+                    <div class="livraison">
+                        <div class="frai_de_livraison">
+                            <img src="../ressources/images/livraison-rapide.png" alt="camion_de_livraison">
+                            <p>Frais de livraison</p>
+                        </div>
+                        <p>Gratuit</p>
+                    </div>
+                    <div class="total_tva_incluse">
+                        <h5>Total (TVA incluse)</h5>
+                        <p class="prix_total">x€</p>
+                        <script>DisplayTotal()</script>
+                    </div>
+                    <button class="finaliser_paiement" onclick="show_final_paiement()">Finaliser le paiement</button>
+                </div>
+                <div class="moyen_de_paiment">
+                    <h5>Nous acceptons</h5>
+                    <div class="image_moyen_de_paiement">
+                        <div class="visa">
+                            <div class="visa_bw">
+                                <img src="../ressources/images/visa_bw.png" class="bw" alt="visa_bw">
+                            </div>
+                            <div class="visa_color">
+                                <img src="../ressources/images/visa_color.png" class="color" alt="visa_color">
+                            </div>
+                        </div>
+                        <div class="american-express">
+                            <div class="american-express_bw">
+                                <img src="../ressources/images/symboles.png" class="bw" alt="american-express_bw">
+                            </div>
+                            <div class="american-express_color">
+                                <img src="../ressources/images/american-express.png" class="color" alt="american-express_color">
+                            </div>
+                        </div>
+                        <div class="cb">
+                            <div class="cb_bw">
+                                <img src="../ressources/images/logo-cb_bw.jpg" class="bw" alt="cb_bw">
+                            </div>
+                            <div class="cb_color">
+                                <img src="../ressources/images/logo-cb.jpg" class="color" alt="cb_color">
+                            </div>
+                        </div>
+                        <div class="MasterCard_Logo">
+                            <div class="MasterCard_Logo_bw">
+                                <img src="../ressources/images/MasterCard_Logo_bw.png" class="bw" alt="MasterCard_Logo_bw">
+                            </div>
+                            <div class="MasterCard_Logo_color">
+                                <img src="../ressources/images/MasterCard_Logo.svg.png" class="color" alt="MasterCard_Logo_color">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paiement_securise">
+                        <img>
+                        <p>Paimement 100% securisé</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="paiement_final">
+            <form>
+                <label for="fname">Prénom</label>
+                <input type="text" id="fname" name="firstname" placeholder="Jacques">
+                <label for="lname">Nom</label>
+                <input type="text" id="lname" name="lastname" placeholder="Dutronc">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="jacques.dutronc@gmail.com">
+                <label for="country">Country</label>
+                <label for="adress">Adresse</label>
+                <input type="text" id="adress" name="firstname" placeholder="23 rue des fleurs">
+                <label for="rue">Code Postale</label>
+                <input type="text" id="rue" name="lastname" placeholder="00701">
+                <label for="cb">Code</label>
+                <input type="text" id="cb" name="cb" placeholder="0000-0000-0000-000">
+                <label for="name_owner">Titulaire de la carte</label>
+                <input type="text" id="name_owner" name="name_owner" placeholder="Mr Dutronc">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123">
+                <button class="send" onclick="sendForm()">Payer</button>
+            </form>
+        </div>
+        <footer class="footer">
+            <div class="a_propos">
+                <p>A propos</p>
+                <button onclick="location.href='./FooterSection/FonctionnementDuSite.html'">Fonctionnement du site</button>
+                <button onclick="location.href='./FooterSection/CondiionGeneralDeVente.html'">Conditions générales de vente</button>
+                <button onclick="location.href='./FooterSection/DonneeEtConfidentialite.html'">Données et confidentialité</button>
+            </div>
+            <div class="nos_peluches">
+                <p>Nos peluches</p>
+                <button onclick="location.href='./FooterSection/CharteQualite.html'">Charte qualité</button>
+                <button onclick="location.href='./FooterSection/Confection.html'">Confection</button>
+            </div>
+            <div class="assistance">
+                <p>Assistance</p>
+                <button onclick="location.href='./FooterSection/CentreDaide.html'">Centre d'aide</button>
+                <button onclick="location.href='./Contact.html'">Nous contacter</button>
+            </div>
+        </footer>
+    </body>
+</html>
